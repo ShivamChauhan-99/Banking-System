@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bank</title>
+    <style>
+        html, body {
+          font-family: Arial, Helvetica, sans-serif;
+          background-color: rgb(255, 255, 255);
+          height: 100%;
+          margin: 0%;
+          align-items: center;
+        }
+        h2{
+          margin: 0%;
+          color: rgb(0, 0, 0);
+          font-size: xx-large;
+        }
+        h1{
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: bold;
+          font-size: 82px;
+          text-align: center;
+          color: rgb(0, 0, 0);
+          background-color: lightskyblue;
+          margin: 0%;
+          padding: 30px;
+        }
+        #home{
+          position: absolute;
+          transform: translateY(39%);
+          margin: 0%;
+          width: fit-content;
+        }
+        #view{
+          position: absolute;
+          transform: translateY(73%);
+          margin: 0%;
+          width: fit-content;
+        }
+        #view #image{
+          width: 125px;
+          height: 125px;
+        }
+        #content{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          text-align: center;
+          /* background-image: url('images/wallpaper_3.jpg'); */
+          background-repeat: no-repeat;
+          background-position: center;   
+          background-size: 100% 100%;
+          border: 0px;
+          margin: 0%;
+          height: 70%;
+        }
+        #contact {
+          padding: 5px;
+          position: relative;
+          background-color: rgb(133, 205, 250);
+          color: rgb(0, 0, 0);
+          text-align: center;
+        }
+        #image{
+          width: 250px;
+          height: 250px;
+        }
+        #home #image:hover{
+          transform: scale(1.2);
+        }
+        p{
+          margin: 5px;
+        }
+        #view_all{
+          text-align: center;
+          background-color: lightgrey;
+          text-decoration: none;
+          display: inline-block;
+          font-size: larger;
+          font-weight: bold;
+          padding: 10px;
+          padding-left: 15px;
+          padding-right: 15px;
+          border: 2px solid black;
+        }
+        #view_all:hover{
+          background-color: #000000;
+          color: #ffffff;
+          padding: 12px;
+          padding-left: 15px;
+          padding-right: 15px;
+          border-radius: 12px;
+          cursor: pointer;
+        }
+        #view_all:active{
+          background-color: #000000;
+          color: #ffffff;
+          padding: 10px;
+          padding-left: 15px;
+          padding-right: 15px;
+          border-radius: 12px;
+          cursor: pointer;
+        }
+    </style>
+    <script>
+      function swap(div1, div2){
+        d1 = document.getElementById(div1);
+        d2 = document.getElementById(div2);
+        if(d2.style.display=="none"){
+          document.title = "Home";
+          d1.style.display = "none";
+          d2.style.display = "block";
+        }
+        else{
+          document.title = "The Bank";
+          d1.style.display = "block";
+          d2.style.display = "none";
+        }
+      }
+    </script>
+</head>
+<body >
+  <h1><u>NRC BANK</u></h1>
+  <div id="content">
+
+    <div id = "home" class="center">
+      <!-- <h2 style="margin-bottom: 25px;">Welcome</h2> -->
+      <input id = "image" type="image" src="images/logo.png" onclick="swap('home', 'view')"/>
+      <!-- <h2 style="margin-top: 25px;">Home</h2> -->
+    </div>
+
+    <div id = "view" class="center" style="display: none;">
+      <img id='image'  src="images/customer_image.png" />
+      <br>
+      <a href="view_all.php"><input id="view_all" type="submit" value="View All Customers"></a>
+    </div>
+
+  </div>
+  <div id="contact">
+    <p>CONTACT</p>
+    <p>shivamchauhan2gr8@gmail.com &emsp; (+91) 8700880598</p>
+  </div>
+</body>
+</html>
